@@ -1,13 +1,10 @@
-import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
 import './globals.css';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'ZeroDev Web3 Auth',
   description: 'ZeroDev Web3 Auth',
-}
+};
 
 export default function RootLayout({
   children,
@@ -16,9 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.className} bg-zinc-800 text-slate-200`}
-      >
+      <body className="bg-zinc-900 text-slate-200">
         {children}
       </body>
     </html>

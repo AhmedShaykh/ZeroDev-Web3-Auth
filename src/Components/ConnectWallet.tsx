@@ -13,7 +13,7 @@ const ConnectWallet = () => {
     const setWallet = async (provider: any) => {
 
         const signer = await getZeroDevSigner({
-            projectId: "<your-key>",
+            projectId: "a5600f42-4dff-48f1-b2ec-202bf61eb731",
             owner: await getRPCProviderOwner(provider),
         });
 
@@ -23,22 +23,18 @@ const ConnectWallet = () => {
     const zeroDevWeb3Auth = useMemo(() => {
 
         const instance = new ZeroDevWeb3AuthWithModal([
-            "<your-key>"
+            "a5600f42-4dff-48f1-b2ec-202bf61eb731"
         ]);
 
         instance.init({
             onConnect: async () => {
-
-                console.log("Console Provider", zeroDevWeb3Auth.provider);
-
-                console.log("I'm Connected")
 
                 setLoading(true);
 
                 setWallet(zeroDevWeb3Auth.provider);
 
                 setLoading(false);
-            },
+            }
         });
 
         return instance;
@@ -81,7 +77,7 @@ const ConnectWallet = () => {
                     <button onClick={handleClick} disabled={loading}>
                         {loading ?
                             <button
-                                className="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 font-bold rounded-lg text-md px-6 py-3 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700"
+                                className="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 font-bold rounded-lg text-lg px-7 py-3.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700"
                             >
                                 Loading ...
                             </button>
